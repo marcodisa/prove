@@ -27,7 +27,6 @@ var config_table = configurazione_tabella;
 function AddColumn() {
 
     counter++;
-    counter2++;
     rownum++;
 
     //Build an array containing different colum types
@@ -85,6 +84,8 @@ function AddColumn() {
 
     $(function () {
         $('#' + counter).change(function () {
+
+            counter2++; //serve ad assegnare id univoci ai radiofield di ord ed alle checkbox chiave
 
             var tipoId = $('option:selected', this).text();
 
