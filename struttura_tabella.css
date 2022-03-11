@@ -1,0 +1,82 @@
+@import url("./fontawesome.css");
+
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+    -webkit-tap-highlight-color: rgba(250, 250, 250, 90);
+}
+
+body {
+    background-color: #9CB6C8;
+    height: 100%;
+    font-family: "Alliance No.1", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 13px;
+}
+
+#widget {
+    width: 800px; 
+    height: 400px;
+    min-width: 800px; 
+    min-height: 400px;
+    padding: 0.5em; 
+    margin: 400px;
+}
+
+table
+{
+    table-layout: fixed;
+    width: 700px;
+    overflow: hidden;
+  }
+
+  /*tr:hover {
+    background-color: #e9e9e934;
+    z-index: -1;
+  }
+*/
+  td, th {
+    position: relative;
+  }
+/*
+  td:hover::after,  th:hover::after {
+    content: "";
+    position: absolute;
+    background-color: #e9e9e934;
+    width: 100%;
+    z-index: -1;
+  }
+*/
+
+.selected {
+    background-color: #e9e9e934;
+  }
+
+#widget h3 {
+    text-align: center; 
+    margin: 0;
+}
+
+#btnok {
+    float: right;
+    /*padding: 0.4em 1em 0.4em 1em;*/
+    margin: 0.2em 0.4em 0.2em 0.4em;
+}
+
+#btnannulla {
+    float: right;
+    /*padding: 0.4em 1em 0.4em 1em;*/
+    margin: 0.2em 0.4em 0.2em 0.4em;
+}
+
+.even {
+    background-color: rgba(233, 233, 233, 0.45);
+}
+
+.odd {
+    background-color: rgba(233, 233, 233, 0.25);
+}
+
+.myDragClass {
+    background-color: rgba(65, 144, 233, 0.5);
+    border: 1px solid black !important;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
