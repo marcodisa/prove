@@ -107,13 +107,13 @@ function AddColumn() {
                 var btnProp = $("<input class='prop' id='propInput' name='prop' placeholder='40'  type='number' min='1' max='32767' style='width: 120px'>");
                 $(cellProp).append(btnProp);
 
-                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 +"'>");
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "'>");
                 $(cellChiave).append(btnChiave);
 
                 var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
                 $(cellCalc).append(btnCalc);
 
-                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 +"' onclick='gestisciChiave(this)'>");
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
                 $(cellOrd).append(btnOrd);
 
                 var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
@@ -126,13 +126,13 @@ function AddColumn() {
                 var btnProp = $("<select class='prop' id='combobox' style='width: 120px'><option value='Float'>Float</option><option value='Int1'>Int1</option><option value='Int2'>Int2</option><option value='Int4'>Int4</option></select>");
                 $(cellProp).append(btnProp);
 
-                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 +"'>");
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "'>");
                 $(cellChiave).append(btnChiave);
 
                 var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
                 $(cellCalc).append(btnCalc);
 
-                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 +"' onclick='gestisciChiave(this)'>");
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
                 $(cellOrd).append(btnOrd);
 
                 var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
@@ -146,27 +146,25 @@ function AddColumn() {
                 var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
                 $(cellNome).append(btnNome);
 
-                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 +"'>");
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "'>");
                 $(cellChiave).append(btnChiave);
 
                 var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
                 $(cellCalc).append(btnCalc);
 
-                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 +"' onclick='gestisciChiave(this)'>");
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
                 $(cellOrd).append(btnOrd);
 
                 var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
                 $(cellForm).append(btnForm);
-            }
-            if (tipoId == "Link a Cartella") {
+            } else if (tipoId == "Link a Cartella") {
 
                 var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
                 $(cellNome).append(btnNome);
 
-                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 +"'>");
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "'>");
                 $(cellChiave).append(btnChiave);
-            }
-            if (tipoId == "Link a Tabella") {
+            } else if (tipoId == "Link a Tabella") {
 
                 var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
                 $(cellNome).append(btnNome);
@@ -178,19 +176,14 @@ function AddColumn() {
 
                 var btnProp = $("<select class='prop' id='combobox' style='width: 120px'><option value='Float'>Float</option><option value='Int1'>Int1</option><option value='Int2'>Int2</option><option value='Int4'>Int4</option></select>");
                 $(cellProp).append(btnProp);
-
-
             }
-
         });
-
     });
 
 
     $("tr").click(function () {
         $(this).addClass("selected").siblings().removeClass("selected");
     });
-
 
     $("#tblContainer").find("tr:even").addClass("even");
     $("#tblContainer").find("tr:odd").addClass("odd");
@@ -241,9 +234,10 @@ $(document).ready(function () {
             if (config_table == "ExtKey") {
                 $.each($(".extKey"), function () {
                     if ($(this).is(":checked"))
-                        extkey.push($(this).val());
+                        //extkey.push($(this).val());
+                        extkey.push("1");
                     else
-                        extkey.push("off");
+                        extkey.push("0");
                 });
             }
 
@@ -253,30 +247,30 @@ $(document).ready(function () {
 
             $.each($(".chiave"), function () {
                 if ($(this).is(":checked"))
-                    chiave.push($(this).val());
+                    chiave.push("1");
                 else
-                    chiave.push("off");
+                    chiave.push("0");
             });
 
             $.each($(".calc"), function () {
                 if ($(this).is(":checked"))
-                    calc.push($(this).val());
+                    calc.push("1");
                 else
-                    calc.push("off");
+                    calc.push("0");
             });
 
             $.each($(".ord"), function () {
                 if ($(this).is(":checked"))
-                    ord.push($(this).val());
+                    ord.push("1");
                 else
-                    ord.push("off");
+                    ord.push("0");
             });
 
             $.each($(".form"), function () {
                 if ($(this).is(":checked"))
-                    form.push($(this).val());
+                    form.push("1");
                 else
-                    form.push("off");
+                    form.push("0");
             });
 
 
@@ -383,14 +377,15 @@ $(document).ready(function () {
                 data: {data: formOutput, config: config_table},
                 type: 'POST',
                 success: function () {
-                    alert("post to PHP done!");
+                    alert("post to PHP done :)");
                 }
             });
         });
     });
 });
 
-function gestisciChiave(elemento){  //viene eseguita ad ogni click su un radiofield di ordinamento
+
+function gestisciChiave(elemento) {  //viene eseguita ad ogni click su un radiofield di ordinamento
 
     if (elemento.value == "on") {
 
@@ -400,6 +395,214 @@ function gestisciChiave(elemento){  //viene eseguita ad ogni click su un radiofi
         var x = id.substr(11, lungh_id);  //11 perchè l'id è "checkbox-4-" + il contatore, quindi deve leggere dal 12esimo carattere in poi
         //alert (x);
 
-        $('input#checkbox-2-'+x).prop('checked', true);
+        $('input#checkbox-2-' + x).prop('checked', true);
     }
 }
+
+
+function campoBase() {
+
+    counter++;
+    rownum++;
+
+    //Build an array containing different colum types
+    var types = [
+        {TypeId: 1, Name: "Alfanumerica"},
+        {TypeId: 2, Name: "Numerica"},
+        {TypeId: 4, Name: "Calendario"}
+    ];
+
+    //Create a DropDownList element.
+    var ddlTypes = $("<select class='tipo' id='" + counter + "' style='width:109.2px' required/>");
+
+    //Add the Options to the DropDownList.
+    $(types).each(function () {
+
+        var option = $("<option name='tipo_campo' id='tipo_campo'/>");
+
+        //Set Customer Name in Text part.
+        option.html(this.Name);
+
+        //Set Customer CustomerId in Value part.
+        option.val(this.TypeId);
+
+        //Add the Option element to DropDownList.
+        ddlTypes.append(option);
+    });
+
+    //Reference the container Table.
+    var tblContainer = $("#tblContainer");
+
+    //Add the Table row.
+    let row = tblContainer[0].insertRow(-1);
+    row.setAttribute("id", "row" + counter);
+    row.setAttribute("class", "nodrag nodrop");
+
+    //Add the DropDownList to Table Row.
+    let cell = row.insertCell(-1);
+    $(cell).append(ddlTypes);
+
+    //Reset cell wen change drop down list selection
+    let cellNome = row.insertCell(-1);
+    if (config_table == "ExtKey") {
+        var cellExt = row.insertCell(-1);
+    }
+    let cellProp = row.insertCell(-1);
+    let cellChiave = row.insertCell(-1);
+    let cellCalc = row.insertCell(-1);
+    let cellOrd = row.insertCell(-1);
+    let cellForm = row.insertCell(-1);
+    row.insertCell(-1);
+
+    var tipoId = $('#' + counter + ' option:selected').text();
+
+    $(cellProp).empty(btnProp);
+    $(cellChiave).empty(btnChiave);
+    $(cellCalc).empty(btnCalc);
+    $(cellOrd).empty(btnOrd);
+    $(cellForm).empty(btnForm);
+
+    if (tipoId == "Alfanumerica") {
+
+        var btnNome = $("<input class='nameInput' id='nameInput' name='nome' style='width: 120px' required>");
+        $(cellNome).append(btnNome);
+
+        var btnProp = $("<input class='prop' id='propInput' name='prop' placeholder='40'  type='number' min='1' max='32767' style='width: 120px'>");
+        $(cellProp).append(btnProp);
+
+        var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+        $(cellChiave).append(btnChiave);
+        $('#checkbox-2-' + counter2).prop('checked', true);
+
+        var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+        $(cellCalc).append(btnCalc);
+
+        var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+        $(cellOrd).append(btnOrd);
+
+        var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+        $(cellForm).append(btnForm);
+    } else if (tipoId == "Numerica") {
+
+        var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
+        $(cellNome).append(btnNome);
+
+        var btnProp = $("<select class='prop' id='combobox' style='width: 120px'><option value='Float'>Float</option><option value='Int1'>Int1</option><option value='Int2'>Int2</option><option value='Int4'>Int4</option></select>");
+        $(cellProp).append(btnProp);
+
+        var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+        $(cellChiave).append(btnChiave);
+        $('#checkbox-2-' + counter2).prop('checked', true);
+
+        var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+        $(cellCalc).append(btnCalc);
+
+        var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+        $(cellOrd).append(btnOrd);
+
+        var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+        $(cellForm).append(btnForm);
+    } else if (tipoId == "Calendario") {
+
+        var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
+        $(cellNome).append(btnNome);
+
+        var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+        $(cellChiave).append(btnChiave);
+        $('#checkbox-2-' + counter2).prop('checked', true);
+
+        var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+        $(cellCalc).append(btnCalc);
+
+        var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+        $(cellOrd).append(btnOrd);
+
+        var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+        $(cellForm).append(btnForm);
+    }
+
+    $(function () {
+        $('#' + counter).change(function () {
+
+            counter2++; //serve ad assegnare id univoci ai radiofield di ord ed alle checkbox chiave
+
+            var tipoId = $('option:selected', this).text();
+
+            $(cellNome).empty();
+            $(cellProp).empty(btnProp);
+            $(cellChiave).empty(btnChiave);
+            $(cellCalc).empty(btnCalc);
+            $(cellOrd).empty(btnOrd);
+            $(cellForm).empty(btnForm);
+
+            if (tipoId == "Alfanumerica") {
+
+                var btnNome = $("<input class='nameInput' id='nameInput' name='nome' style='width: 120px' required>");
+                $(cellNome).append(btnNome);
+
+                var btnProp = $("<input class='prop' id='propInput' name='prop' placeholder='40'  type='number' min='1' max='32767' style='width: 120px'>");
+                $(cellProp).append(btnProp);
+
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+                $(cellChiave).append(btnChiave);
+                $('#checkbox-2-' + counter2).prop('checked', true);
+
+                var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+                $(cellCalc).append(btnCalc);
+
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+                $(cellOrd).append(btnOrd);
+
+                var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+                $(cellForm).append(btnForm);
+            } else if (tipoId == "Numerica") {
+
+                var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
+                $(cellNome).append(btnNome);
+
+                var btnProp = $("<select class='prop' id='combobox' style='width: 120px'><option value='Float'>Float</option><option value='Int1'>Int1</option><option value='Int2'>Int2</option><option value='Int4'>Int4</option></select>");
+                $(cellProp).append(btnProp);
+
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+                $(cellChiave).append(btnChiave);
+                $('#checkbox-2-' + counter2).prop('checked', true);
+
+                var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+                $(cellCalc).append(btnCalc);
+
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+                $(cellOrd).append(btnOrd);
+
+                var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+                $(cellForm).append(btnForm);
+            } else if (tipoId == "Calendario") {
+
+                var btnNome = $("<input class='nameInput' id='nameInput' style='width: 120px' required>");
+                $(cellNome).append(btnNome);
+
+                var btnChiave = $("<input class='chiave' type='checkbox' name='checkbox-2' id='checkbox-2-" + counter2 + "' disabled>");
+                $(cellChiave).append(btnChiave);
+                $('#checkbox-2-' + counter2).prop('checked', true);
+
+                var btnCalc = $("<input class='calc' type='checkbox' name='checkbox-3' id='checkbox-3'>");
+                $(cellCalc).append(btnCalc);
+
+                var btnOrd = $("<input class='ord' type='radio' name='checkbox-4' id='checkbox-4-" + counter2 + "' onclick='gestisciChiave(this)'>");
+                $(cellOrd).append(btnOrd);
+
+                var btnForm = $("<input class='form' type='checkbox' name='checkbox-5' id='checkbox-5'>");
+                $(cellForm).append(btnForm);
+            }
+        });
+    });
+
+    $("tr").click(function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+    });
+
+    $("#tblContainer").find("tr:even").addClass("even");
+    $("#tblContainer").find("tr:odd").addClass("odd");
+
+    //Add the Remove Button cell to Table Row.
+    row.insertCell(-1);
+};

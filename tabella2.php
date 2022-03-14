@@ -48,9 +48,7 @@ if (isset($_POST["nome"]) && isset($_POST["descrizione"])) {
     </script>
     <script type="text/javascript" src="./struttura_tabella.js"></script>
 </HEAD>
-<BODY>
-
-
+<BODY onload="campoBase()">
 
 <div id="widget" class="ui-widget-content">
 
@@ -65,7 +63,7 @@ if (isset($_POST["nome"]) && isset($_POST["descrizione"])) {
             </p>
 
             <table id="tblContainer" cellpadding="5" cellspacing="0">
-                <tr id="row_intestazione" style="background-color: #e9e9e9;">
+                <tr id="row_intestazione" style="background-color: #e9e9e9;" class="nodrag nodrop">
                     <td style="width:135px">Type</td>
                     <td style="width:135px">Name</td>
                     <td style="width:135px">Property</td>

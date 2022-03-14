@@ -1,0 +1,77 @@
+[{
+"tableName": "s",
+"tableDescription": "",
+"tableConfig": "ExtKey"
+},{
+"type": "Calendario",
+"name": "2",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "0",
+"ord": "0",
+"form": "0"
+},{
+"type": "Link a Cartella",
+"name": "d",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "",
+"ord": "",
+"form": ""
+},{
+"type": "Booleana",
+"name": "w",
+"ext": "",
+"prop": "",
+"key": "",
+"calc": "",
+"ord": "",
+"form": ""
+},{
+"type": "Alfanumerica",
+"name": "4",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "0",
+"ord": "1",
+"form": "0"
+}]{
+"type": "Calendario",
+"name": "2",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "0",
+"ord": "0",
+"form": "0"
+},{
+"type": "Link a Cartella",
+"name": "d",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "",
+"ord": "",
+"form": ""
+},{
+"type": "Booleana",
+"name": "w",
+"ext": "",
+"prop": "",
+"key": "",
+"calc": "",
+"ord": "",
+"form": ""
+},{
+"type": "Alfanumerica",
+"name": "4",
+"ext": "",
+"prop": "",
+"key": "1",
+"calc": "0",
+"ord": "1",
+"form": "0"
+}]
