@@ -1,10 +1,13 @@
 <!-- questa prima parte di script PHP scrive la prima parte della macro di creazione tabella su un file -->
 
 <?php
-
-//ciao Davide
-//ciao Marco
-//ciao Hicare
+/*
+$client = new MongoDB\Client(
+    'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.5gfnd.mongodb.net/Sandbox?retryWrites=true&w=majority'
+);
+$db = $client->Sandbox;
+*/
+//echo phpinfo();
 
 // Controlli sicurezza
 if (isset($_POST["nome"]) && isset($_POST["descrizione"])) {
