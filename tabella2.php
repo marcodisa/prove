@@ -1,11 +1,26 @@
 <!-- questa prima parte di script PHP scrive la prima parte della macro di creazione tabella su un file -->
 
 <?php
+session_start();
 /*
-$client = new MongoDB\Client(
-    'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.5gfnd.mongodb.net/Sandbox?retryWrites=true&w=majority'
-);
-$db = $client->Sandbox;
+try {
+    // connect to OVHcloud Public Cloud Databases for MongoDB (cluster in version 4.4, MongoDB PHP Extension in 1.8.1)
+    $m = new MongoDB\Driver\Query('mongodb+srv://m001-student:pippo@sandbox.5gfnd.mongodb.net/Sandbox?retryWrites=true&w=majority');
+    echo "Connection to database successfully ";
+    // display the content of the driver, for diagnosis purpose
+    var_dump($m);
+
+    $database = $m->Sandbox;
+    var_dump($database);
+    $collections = $database->listCollections();
+    foreach ($collections    as $col) {
+        echo $col->getName();
+    }
+}
+catch (Throwable $e) {
+    // catch throwables when the connection is not a success
+    echo "Captured Throwable for connection : " . $e->getMessage() . PHP_EOL;
+}
 */
 //echo phpinfo();
 
@@ -22,7 +37,8 @@ if (isset($_POST["nome"]) && isset($_POST["descrizione"])) {
         }
     }
 
-    $textJson = "[{\n" . '"tableName": "' . $nome . '"' . ",\n" . '"tableDescription": "' . $descrizione . '"' . ",\n" . '"tableConfig": "' . $configurazione . '"' . "\n},";
+    $textJson = "{\n" . '"tableName": "' . $nome . '"' . ",\n" . '"tableDescription": "' . $descrizione . '"' . ",\n" . '"tableConfig": "' . $configurazione . '"' . ",\n";
+    $_SESSION["textJson"] = $textJson;
 
     $src = fopen('./table_create.json', 'w+');    //la variabile $src vale TRUE se il file viene correttamente aperto, FALSE in caso contario. Può essere quindi sottoposta a test
 

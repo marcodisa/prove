@@ -376,7 +376,8 @@ $(document).ready(function () {
                 url: "scrivi_macro.php",
                 data: {data: formOutput, config: config_table},
                 type: 'POST',
-                success: function () {
+                success: function (data) {
+                    alert(data);
                     alert("post to PHP done :)");
                 }
             });

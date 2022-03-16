@@ -1,2 +1,25 @@
-
-		TableCreateBegin("papero","papero")
+{
+    "_id": {
+        "$oid": "6231a6b7de9559e3813bf07a"
+    },
+    "descrizione": "pippo è alto",
+    "config": "Default",
+    "nome": "pippo",
+    "campi": [{
+        "type": "Alfanumerica",
+        "name": "campo base",
+        "prop": "",
+        "key": true,
+        "calc": false,
+        "ord": true,
+        "form": true
+    }, {
+        "type": "Numerica",
+        "name": "costo",
+        "prop": "Float",
+        "key": false,
+        "calc": false,
+        "ord": false,
+        "form": true
+    }]
+}

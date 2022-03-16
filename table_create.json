@@ -1,5 +1,33 @@
-[{
-"tableName": "de",
-"tableDescription": "",
-"tableConfig": "Default"
-},
+{
+"tableName": "dw",
+"tableDescription": "w",
+"tableConfig": "Default",
+{
+"tableName": "dw",
+"tableDescription": "w",
+"tableConfig": "Default",
+"fields": [{
+"type": "Alfanumerica",
+"name": "dew",
+"prop": "",
+"key": "1",
+"calc": "0",
+"ord": "0",
+"form": "0"
+},{
+"type": "Numerica",
+"name": "dwed",
+"prop": "Float",
+"key": "0",
+"calc": "0",
+"ord": "0",
+"form": "0"
+},{
+"type": "Calendario",
+"name": "ew",
+"prop": "",
+"key": "0",
+"calc": "0",
+"ord": "0",
+"form": "0"
+}]}
